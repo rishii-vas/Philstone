@@ -42,7 +42,6 @@
                     <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
                     <li><a href="outcomes.html" class="nav-link">Outcomes</a></li>
                     <li><a href="work.html" class="nav-link">Work</a></li>
-                    <!-- Mobile only CTA in dropdown -->
                     <li class="mobile-cta-item"><a href="contact.html" class="btn-primary mobile-nav-cta">Book
                             Consultation</a></li>
                 </ul>
@@ -72,7 +71,7 @@
                 <span class="trust-item">Scalable</span>
             </div>
         </div>
-        <div class="hero-visual-overlay"></div> <!-- Gradient blend -->
+        <div class="hero-visual-overlay"></div>
     </section>
 
     <!-- 3. Core Capabilities (Services) -->
@@ -147,6 +146,19 @@
         </div>
     </section>
 
+    <!-- NEW: Technologies Marquee -->
+    <section class="marquee-section">
+        <div class="marquee-container">
+            <div class="marquee-content">
+                <span>Stripe</span><span>Salesforce</span><span>HubSpot</span><span>Slack</span><span>Shopify</span><span>QuickBooks</span><span>AWS</span><span>Google
+                    Cloud</span><span>OpenAI</span><span>PostgreSQL</span>
+                <!-- Duplicate for seamless loop -->
+                <span>Stripe</span><span>Salesforce</span><span>HubSpot</span><span>Slack</span><span>Shopify</span><span>QuickBooks</span><span>AWS</span><span>Google
+                    Cloud</span><span>OpenAI</span><span>PostgreSQL</span>
+            </div>
+        </div>
+    </section>
+
     <!-- 4. How It Works (Timeline) -->
     <section id="process" class="section process">
         <div class="container">
@@ -208,33 +220,77 @@
         </div>
     </section>
 
-    <!-- 6. Case Study -->
-    <section id="work" class="section case-study">
+    <!-- 6. Portfolio Carousel (Replaces Case Study) -->
+    <section id="work" class="section portfolio">
         <div class="container">
-            <h2 class="section-title">Proof of Work</h2>
-            <div class="glass-card">
-                <div class="case-header">
-                    <span class="badge">Logistics</span>
-                    <h3>Automating Global Supply Chain Data</h3>
+            <div class="portfolio-header">
+                <h2 class="section-title">Proof of Work</h2>
+                <div class="portfolio-nav">
+                    <button class="nav-arrow left" aria-label="Scroll left">←</button>
+                    <button class="nav-arrow right" aria-label="Scroll right">→</button>
                 </div>
-                <div class="case-body">
-                    <div class="case-segment">
-                        <h4>Challenge</h4>
-                        <p>A logistics firm struggled with fragmented data across 5 legacy systems, leading to 4-hour
-                            reporting delays.</p>
-                    </div>
-                    <div class="case-segment">
-                        <h4>Solution</h4>
-                        <p>We built a unified data pipeline using Python & AWS Lambda, reducing report generation to 5
-                            minutes.</p>
-                    </div>
-                    <div class="case-segment">
-                        <h4>Result</h4>
-                        <div class="testimonial">
-                            "Philstone transformed our operations. We now have real-time visibility we didn't think was
-                            possible."
-                            <br><small>— VP of Operations</small>
+            </div>
+
+            <div class="portfolio-rail-wrapper">
+                <div class="portfolio-rail" id="portfolio-rail">
+                    <!-- Case 1 -->
+                    <div class="portfolio-card">
+                        <div class="card-badge">Logistics</div>
+                        <h3>Global Supply Chain Automation</h3>
+                        <div class="card-details">
+                            <p><strong>Challenge:</strong> Fragmented data across 5 legacy systems caused 4hr reporting
+                                delays.</p>
+                            <p><strong>Solution:</strong> Unified data pipeline using Python & AWS Lambda.</p>
+                            <p><strong>Outcome:</strong> Reporting cut to 5 mins. Real-time visibility.</p>
                         </div>
+                        <div class="card-quote">"We now have real-time visibility we didn't think was possible."</div>
+                    </div>
+
+                    <!-- Case 2 -->
+                    <div class="portfolio-card">
+                        <div class="card-badge">FinTech</div>
+                        <h3>Automated Compliance Checks</h3>
+                        <div class="card-details">
+                            <p><strong>Challenge:</strong> Slow manual KYC checks bottlenecking user onboarding.</p>
+                            <p><strong>Solution:</strong> Automated verification system with custom logic API.</p>
+                            <p><strong>Outcome:</strong> 90% instant checks. 3x faster onboarding.</p>
+                        </div>
+                        <div class="card-quote">"Scale is no longer a worry for our compliance team."</div>
+                    </div>
+
+                    <!-- Case 3 -->
+                    <div class="portfolio-card">
+                        <div class="card-badge">E-Commerce</div>
+                        <h3>Inventory Sync & Forecasting</h3>
+                        <div class="card-details">
+                            <p><strong>Challenge:</strong> Overselling due to sync lag between Shopify & Warehouse.</p>
+                            <p><strong>Solution:</strong> Real-time webhook-based inventory sync engine.</p>
+                            <p><strong>Outcome:</strong> Zero overselling incidents in Q4. 15% revenue lift.</p>
+                        </div>
+                        <div class="card-quote">"The system just works. It's invisible and perfect."</div>
+                    </div>
+
+                    <!-- Case 4 -->
+                    <div class="portfolio-card">
+                        <div class="card-badge">Healthcare</div>
+                        <h3>Patient Intake Processing</h3>
+                        <div class="card-details">
+                            <p><strong>Challenge:</strong> Manual data entry from PDF forms to EMR.</p>
+                            <p><strong>Solution:</strong> OCR + NLP pipeline to parse and validate data.</p>
+                            <p><strong>Outcome:</strong> 20hrs/week saved per admin. Error rate < 1%.</p>
+                        </div>
+                        <div class="card-quote">"Our staff can finally focus on patients, not paperwork."</div>
+                    </div>
+                    <!-- Case 5 -->
+                    <div class="portfolio-card">
+                        <div class="card-badge">SaaS</div>
+                        <h3>Customer Support Triage</h3>
+                        <div class="card-details">
+                            <p><strong>Challenge:</strong> L1 support overwhelmed by repetitive queries.</p>
+                            <p><strong>Solution:</strong> AI agent to classify and draft responses.</p>
+                            <p><strong>Outcome:</strong> 40% reduction in ticket volume. Faster resolution.</p>
+                        </div>
+                        <div class="card-quote">"Support morale is up, and customers are happier."</div>
                     </div>
                 </div>
             </div>
@@ -286,6 +342,11 @@
                     <a href="outcomes.html">Outcomes</a>
                     <a href="work.html">Work</a>
                     <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="tos.html">Terms of Service</a>
+                    <a href="privacy.html">Privacy Policy</a>
                 </div>
                 <div class="footer-col">
                     <h4>Services</h4>
