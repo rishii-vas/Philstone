@@ -5,181 +5,235 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Philstone - Systems automation and AI solutions for startups and SMEs. Reliable, scalable, and efficient.">
-    <title>Philstone | Intelligent Systems Automation</title>
+        content="Philstone - Scalable automation systems for operations, data, and infrastructure.">
+    <title>Philstone | Systems Automation & AI Solutions</title>
 
-    <!-- Fonts -->
+    <!-- Fonts: Inter & Space Grotesk -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;700&display=swap"
         rel="stylesheet">
 
-    <!-- Styles -->
+    <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <!-- Header -->
-    <header id="header">
-        <div class="container nav-container">
-            <a href="#" class="logo">Philstone</a>
-            <button class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
-            <nav class="nav-links">
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#why-us" class="nav-link">Why Philstone</a>
-                <a href="#case-studies" class="nav-link">Work</a>
-                <a href="contact.html" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Book
-                    Consultation</a>
+    <!-- 1. Sticky Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="container navbar-container">
+            <a href="index.html" class="logo">Philstone</a>
+
+            <div class="nav-right">
+                <a href="contact.html" class="nav-cta btn-primary">Book a Consultation</a>
+                <button class="hamburger-menu" id="hamburger-menu" aria-label="Toggle menu" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+
+            <!-- Dropdown Menu -->
+            <nav class="nav-dropdown" id="nav-dropdown" aria-hidden="true">
+                <ul class="nav-list">
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+                    <li><a href="outcomes.html" class="nav-link">Outcomes</a></li>
+                    <li><a href="work.html" class="nav-link">Work</a></li>
+                    <!-- Mobile only CTA in dropdown -->
+                    <li class="mobile-cta-item"><a href="contact.html" class="btn-primary mobile-nav-cta">Book
+                            Consultation</a></li>
+                </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- 2. Hero Section -->
     <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Automation that scales your systems — <span style="color: var(--accent-primary)">not your
-                        workload.</span></h1>
-                <p>We design and implement reliable automation systems for operations, data, and infrastructure — so
-                    your business runs without constant manual intervention.</p>
-                <div class="hero-cta">
-                    <a href="services.html" class="btn btn-primary">Explore Solutions</a>
-                    <a href="contact.html" class="btn btn-secondary">Book a Consultation</a>
-                </div>
+        <div class="hero-bg" id="hero-canvas"></div>
+        <div class="container hero-content">
+            <h1 class="hero-headline">Automation that scales your systems — <span class="highlight">not your
+                    workload.</span></h1>
+            <p class="hero-subheading">
+                We design reliable automation systems for operations, data, and infrastructure so your business runs
+                without constant manual intervention.
+            </p>
+            <div class="hero-actions">
+                <a href="services.html" class="btn-primary hero-btn">Explore Solutions</a>
+                <a href="contact.html" class="btn-primary hero-btn">Book a Consultation</a>
             </div>
 
-            <!-- Abstract CSS/SVG Visualization -->
-            <div class="hero-visual">
-                <svg viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="400" cy="300" r="150" stroke="var(--accent-primary)" stroke-width="2"
-                        stroke-opacity="0.2" />
-                    <circle cx="400" cy="300" r="250" stroke="var(--accent-secondary)" stroke-width="1"
-                        stroke-opacity="0.1" />
-                    <path d="M400 150 L400 450" stroke="var(--accent-primary)" stroke-width="1" stroke-opacity="0.3" />
-                    <path d="M250 300 L550 300" stroke="var(--accent-primary)" stroke-width="1" stroke-opacity="0.3" />
-                    <!-- Data points -->
-                    <circle cx="400" cy="150" r="4" fill="var(--accent-primary)">
-                        <animate attributeName="opacity" values="0.3;1;0.3" dur="3s" repeatCount="indefinite" />
-                    </circle>
-                    <circle cx="550" cy="300" r="4" fill="var(--accent-primary)">
-                        <animate attributeName="opacity" values="0.3;1;0.3" dur="3s" begin="1s"
-                            repeatCount="indefinite" />
-                    </circle>
-                    <circle cx="400" cy="450" r="4" fill="var(--accent-primary)">
-                        <animate attributeName="opacity" values="0.3;1;0.3" dur="3s" begin="2s"
-                            repeatCount="indefinite" />
-                    </circle>
-                </svg>
+            <div class="hero-trust">
+                <span class="trust-item">Reliable</span> •
+                <span class="trust-item">Observable</span> •
+                <span class="trust-item">Secure</span> •
+                <span class="trust-item">Scalable</span>
             </div>
         </div>
+        <div class="hero-visual-overlay"></div> <!-- Gradient blend -->
     </section>
 
-    <!-- Services Overview -->
-    <section id="services" class="services">
+    <!-- 3. Core Capabilities (Services) -->
+    <section id="services" class="section services">
         <div class="container">
-            <h2 class="section-title">Our Capabilities</h2>
-            <p class="section-subtitle">End-to-end solutions for scalable operations</p>
-
+            <h2 class="section-title">Core Capabilities</h2>
             <div class="services-grid">
                 <!-- Card 1 -->
-                <div class="service-card">
-                    <div class="service-icon">⚡</div>
-                    <h3>Systems Automation</h3>
-                    <p>End-to-end workflow automation across tools, APIs, and databases to eliminate repetitive tasks.
-                    </p>
+                <div class="service-card" tabindex="0">
+                    <div class="card-header">
+                        <span class="service-icon">⚡</span>
+                        <h3>Systems Automation</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="summary">Eliminate repetitive workflows across tools and databases.</p>
+                        <ul class="details">
+                            <li>API Integrations</li>
+                            <li>Data Pipelines</li>
+                            <li>Scheduled Jobs</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="service-card">
-                    <div class="service-icon">🔧</div>
-                    <h3>Backend & API Engineering</h3>
-                    <p>Secure, scalable APIs and automation-ready backend systems designed for high availability.</p>
+                <div class="service-card" tabindex="0">
+                    <div class="card-header">
+                        <span class="service-icon">🔧</span>
+                        <h3>Backend & API Engineering</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="summary">Robust backend architectures built for scale and security.</p>
+                        <ul class="details">
+                            <li>FastAPI / Python</li>
+                            <li>Microservices</li>
+                            <li>Secure Gateways</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="service-card">
-                    <div class="service-icon">🧠</div>
-                    <h3>AI-Assisted Automation</h3>
-                    <p>Intelligent document processing, decision support, and custom internal tools.</p>
+                <div class="service-card" tabindex="0">
+                    <div class="card-header">
+                        <span class="service-icon">🧠</span>
+                        <h3>AI-Assisted Automation</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="summary">Leverage LLMs for decision support and content processing.</p>
+                        <ul class="details">
+                            <li>Document Parsing</li>
+                            <li>Smart Agents</li>
+                            <li>NLP Workflows</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <!-- Card 4 -->
-                <div class="service-card">
-                    <div class="service-icon">📊</div>
-                    <h3>Dashboards & Monitoring</h3>
-                    <p>Real-time operational visibility and system observability to keep you in control.</p>
+                <div class="service-card" tabindex="0">
+                    <div class="card-header">
+                        <span class="service-icon">📊</span>
+                        <h3>Dashboards & Monitoring</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="summary">Real-time visibility into your automated ecosystem.</p>
+                        <ul class="details">
+                            <li>Custom Metrics</li>
+                            <li>Alerting Systems</li>
+                            <li>Operational Views</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Philstone -->
-    <section id="why-us" class="why-section">
+    <!-- 4. How It Works (Timeline) -->
+    <section id="process" class="section process">
         <div class="container">
-            <h2 class="section-title">Why Philstone</h2>
-            <p class="section-subtitle">We build systems, not just scripts.</p>
-
-            <div class="why-grid">
-                <div class="why-item">
-                    <div class="check-icon">✓</div>
-                    <div>
-                        <h4>Reliability First</h4>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Failure-aware, observable, and
-                            scalable architectures.</p>
+            <h2 class="section-title">Our Process</h2>
+            <div class="timeline">
+                <div class="step">
+                    <div class="step-marker">01</div>
+                    <div class="step-content">
+                        <h4>Audit & Map</h4>
+                        <p>We analyze your current workflows to identify bottlenecks and automation opportunities.</p>
                     </div>
                 </div>
-                <div class="why-item">
-                    <div class="check-icon">✓</div>
-                    <div>
-                        <h4>Real-World Ops</h4>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Designed for messy operational
-                            realities, not just perfect demos.</p>
+                <div class="step">
+                    <div class="step-marker">02</div>
+                    <div class="step-content">
+                        <h4>Build Layer</h4>
+                        <p>We engineer the automation layer, connecting your disparate tools and data sources.</p>
                     </div>
                 </div>
-                <div class="why-item">
-                    <div class="check-icon">✓</div>
-                    <div>
-                        <h4>Automation-First</h4>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem;">We think in systems and pipelines,
-                            minimizing human-in-the-loop dependencies.</p>
+                <div class="step">
+                    <div class="step-marker">03</div>
+                    <div class="step-content">
+                        <h4>Integrate APIs</h4>
+                        <p>Seamlessly link your internal and third-party services for unified operations.</p>
                     </div>
                 </div>
-                <div class="why-item">
-                    <div class="check-icon">✓</div>
-                    <div>
-                        <h4>Maintainability</h4>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Clean architecture that your team
-                            can own and extend.</p>
+                <div class="step">
+                    <div class="step-marker">04</div>
+                    <div class="step-content">
+                        <h4>Monitor & Scale</h4>
+                        <p>Deploy observability tools to ensure uptime and adapt as you grow.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Case Study -->
-    <section id="case-studies" class="case-study">
+    <!-- 5. Outcomes / Metrics -->
+    <section id="outcomes" class="section outcomes">
+        <div class="container">
+            <div class="metrics-grid">
+                <div class="metric-item">
+                    <span class="metric-value" data-target="70">0</span><span class="suffix">%</span>
+                    <p class="metric-label">Reduction in Manual Ops</p>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-value" data-target="10">0</span><span class="suffix">x</span>
+                    <p class="metric-label">Faster Reporting</p>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-value" data-target="99">0</span><span class="suffix">%</span>
+                    <p class="metric-label">Uptime Reliability</p>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-value" data-target="100">0</span><span class="suffix">%</span>
+                    <p class="metric-label">Better Visibility</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Case Study -->
+    <section id="work" class="section case-study">
         <div class="container">
             <h2 class="section-title">Proof of Work</h2>
-
-            <div class="case-card">
-                <div class="case-content">
-                    <span class="client-tag">Logistics SME</span>
-                    <h3>Scaling Operations Without Hiring</h3>
-                    <p style="margin: 1rem 0; color: var(--text-secondary);">
-                        <strong>Challenge:</strong> Manual order processing and data silos were creating
-                        bottlenecks.<br>
-                        <strong>Solution:</strong> We built automated data pipelines and a centralized dashboard.<br>
-                    </p>
-                    <div class="case-stat">
-                        <div class="stat-item">
-                            <h4>85%</h4>
-                            <p>Reduced Manual Effort</p>
-                        </div>
-                        <div class="stat-item">
-                            <h4>2x</h4>
-                            <p>Faster Decision Making</p>
+            <div class="glass-card">
+                <div class="case-header">
+                    <span class="badge">Logistics</span>
+                    <h3>Automating Global Supply Chain Data</h3>
+                </div>
+                <div class="case-body">
+                    <div class="case-segment">
+                        <h4>Challenge</h4>
+                        <p>A logistics firm struggled with fragmented data across 5 legacy systems, leading to 4-hour
+                            reporting delays.</p>
+                    </div>
+                    <div class="case-segment">
+                        <h4>Solution</h4>
+                        <p>We built a unified data pipeline using Python & AWS Lambda, reducing report generation to 5
+                            minutes.</p>
+                    </div>
+                    <div class="case-segment">
+                        <h4>Result</h4>
+                        <div class="testimonial">
+                            "Philstone transformed our operations. We now have real-time visibility we didn't think was
+                            possible."
+                            <br><small>— VP of Operations</small>
                         </div>
                     </div>
                 </div>
@@ -187,60 +241,66 @@
         </div>
     </section>
 
-    <!-- Call to Action -->
-    <section class="cta-section">
+    <!-- 7. Tech Stack -->
+    <section class="section tech-stack">
         <div class="container">
-            <h2>Build systems that work even when you’re not watching.</h2>
-            <a href="contact.html" class="btn btn-primary">Start Your Automation Journey</a>
+            <h4 class="tech-title">Built With Modern Standards</h4>
+            <div class="tech-grid">
+                <a href="standards-python.html" class="tech-chip">Python</a>
+                <a href="standards-fastapi.html" class="tech-chip">FastAPI</a>
+                <a href="standards-postgresql.html" class="tech-chip">PostgreSQL</a>
+                <a href="standards-redis.html" class="tech-chip">Redis</a>
+                <a href="standards-docker.html" class="tech-chip">Docker</a>
+                <a href="standards-cloud.html" class="tech-chip">AWS / GCP</a>
+                <a href="standards-github-actions.html" class="tech-chip">GitHub Actions</a>
+                <a href="standards-webhooks.html" class="tech-chip">Webhooks</a>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
+    <!-- 8. Final CTA -->
+    <section class="section final-cta">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <a href="#" class="logo" style="display: block; margin-bottom: 1rem;">Philstone</a>
-                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Engineering reliable automation systems
-                        for the modern enterprise.</p>
+            <h2>Build systems that work even when you’re not watching.</h2>
+            <div class="cta-wrapper">
+                <a href="contact.html" class="btn-primary large">Start Your Automation Journey</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">Philstone</a>
+                <p class="footer-tagline">Engineering the future of work.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="GitHub">GitHub</a>
+                    <a href="#" aria-label="LinkedIn">LinkedIn</a>
                 </div>
+            </div>
+            <div class="footer-nav">
                 <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#case-studies">Work</a></li>
-                        <li><a href="#about">About</a></li>
-                    </ul>
+                    <h4>Company</h4>
+                    <a href="how-it-works.html">Process</a>
+                    <a href="outcomes.html">Outcomes</a>
+                    <a href="work.html">Work</a>
+                    <a href="contact.html">Contact</a>
                 </div>
                 <div class="footer-col">
                     <h4>Services</h4>
-                    <ul>
-                        <li><a href="#">Automation</a></li>
-                        <li><a href="#">Backend Dev</a></li>
-                        <li><a href="#">Dashboards</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Connect</h4>
-                    <ul>
-                        <li><a href="#">LinkedIn</a></li>
-                        <li><a href="#">GitHub</a></li>
-                        <li><a href="#">Twitter</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2026 Philstone. All rights reserved.</p>
-                <div style="margin-top: 0.5rem;">
-                    <a href="#" style="margin-right: 1rem;">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
+                    <a href="services.html">Automation</a>
+                    <a href="services.html">Consulting</a>
+                    <a href="services.html">Development</a>
                 </div>
             </div>
         </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Philstone. All rights reserved.</p>
+        </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- JS -->
     <script src="script.js"></script>
 </body>
 
