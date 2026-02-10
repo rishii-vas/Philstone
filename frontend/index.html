@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Philstone - Systems automation and AI solutions for startups and SMEs. Reliable, scalable, and efficient.">
+    <title>Philstone | Intelligent Systems Automation</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">Philstone</a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
+            <nav class="nav-links">
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#why-us" class="nav-link">Why Philstone</a>
+                <a href="#case-studies" class="nav-link">Work</a>
+                <a href="contact.html" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Book
+                    Consultation</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Automation that scales your systems — <span style="color: var(--accent-primary)">not your
+                        workload.</span></h1>
+                <p>We design and implement reliable automation systems for operations, data, and infrastructure — so
+                    your business runs without constant manual intervention.</p>
+                <div class="hero-cta">
+                    <a href="services.html" class="btn btn-primary">Explore Solutions</a>
+                    <a href="contact.html" class="btn btn-secondary">Book a Consultation</a>
+                </div>
+            </div>
+
+            <!-- Abstract CSS/SVG Visualization -->
+            <div class="hero-visual">
+                <svg viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="400" cy="300" r="150" stroke="var(--accent-primary)" stroke-width="2"
+                        stroke-opacity="0.2" />
+                    <circle cx="400" cy="300" r="250" stroke="var(--accent-secondary)" stroke-width="1"
+                        stroke-opacity="0.1" />
+                    <path d="M400 150 L400 450" stroke="var(--accent-primary)" stroke-width="1" stroke-opacity="0.3" />
+                    <path d="M250 300 L550 300" stroke="var(--accent-primary)" stroke-width="1" stroke-opacity="0.3" />
+                    <!-- Data points -->
+                    <circle cx="400" cy="150" r="4" fill="var(--accent-primary)">
+                        <animate attributeName="opacity" values="0.3;1;0.3" dur="3s" repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="550" cy="300" r="4" fill="var(--accent-primary)">
+                        <animate attributeName="opacity" values="0.3;1;0.3" dur="3s" begin="1s"
+                            repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="400" cy="450" r="4" fill="var(--accent-primary)">
+                        <animate attributeName="opacity" values="0.3;1;0.3" dur="3s" begin="2s"
+                            repeatCount="indefinite" />
+                    </circle>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Capabilities</h2>
+            <p class="section-subtitle">End-to-end solutions for scalable operations</p>
+
+            <div class="services-grid">
+                <!-- Card 1 -->
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>Systems Automation</h3>
+                    <p>End-to-end workflow automation across tools, APIs, and databases to eliminate repetitive tasks.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Backend & API Engineering</h3>
+                    <p>Secure, scalable APIs and automation-ready backend systems designed for high availability.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="service-card">
+                    <div class="service-icon">🧠</div>
+                    <h3>AI-Assisted Automation</h3>
+                    <p>Intelligent document processing, decision support, and custom internal tools.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Dashboards & Monitoring</h3>
+                    <p>Real-time operational visibility and system observability to keep you in control.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Philstone -->
+    <section id="why-us" class="why-section">
+        <div class="container">
+            <h2 class="section-title">Why Philstone</h2>
+            <p class="section-subtitle">We build systems, not just scripts.</p>
+
+            <div class="why-grid">
+                <div class="why-item">
+                    <div class="check-icon">✓</div>
+                    <div>
+                        <h4>Reliability First</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Failure-aware, observable, and
+                            scalable architectures.</p>
+                    </div>
+                </div>
+                <div class="why-item">
+                    <div class="check-icon">✓</div>
+                    <div>
+                        <h4>Real-World Ops</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Designed for messy operational
+                            realities, not just perfect demos.</p>
+                    </div>
+                </div>
+                <div class="why-item">
+                    <div class="check-icon">✓</div>
+                    <div>
+                        <h4>Automation-First</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">We think in systems and pipelines,
+                            minimizing human-in-the-loop dependencies.</p>
+                    </div>
+                </div>
+                <div class="why-item">
+                    <div class="check-icon">✓</div>
+                    <div>
+                        <h4>Maintainability</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Clean architecture that your team
+                            can own and extend.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study -->
+    <section id="case-studies" class="case-study">
+        <div class="container">
+            <h2 class="section-title">Proof of Work</h2>
+
+            <div class="case-card">
+                <div class="case-content">
+                    <span class="client-tag">Logistics SME</span>
+                    <h3>Scaling Operations Without Hiring</h3>
+                    <p style="margin: 1rem 0; color: var(--text-secondary);">
+                        <strong>Challenge:</strong> Manual order processing and data silos were creating
+                        bottlenecks.<br>
+                        <strong>Solution:</strong> We built automated data pipelines and a centralized dashboard.<br>
+                    </p>
+                    <div class="case-stat">
+                        <div class="stat-item">
+                            <h4>85%</h4>
+                            <p>Reduced Manual Effort</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>2x</h4>
+                            <p>Faster Decision Making</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Build systems that work even when you’re not watching.</h2>
+            <a href="contact.html" class="btn btn-primary">Start Your Automation Journey</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo" style="display: block; margin-bottom: 1rem;">Philstone</a>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Engineering reliable automation systems
+                        for the modern enterprise.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#case-studies">Work</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Automation</a></li>
+                        <li><a href="#">Backend Dev</a></li>
+                        <li><a href="#">Dashboards</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Philstone. All rights reserved.</p>
+                <div style="margin-top: 0.5rem;">
+                    <a href="#" style="margin-right: 1rem;">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>
