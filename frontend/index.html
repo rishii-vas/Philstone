@@ -17,6 +17,24 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
+
+    <!-- SEO & OpenGraph -->
+    <meta name="description"
+        content="Philstone - Engineering the future of work with robust, reliable automation systems for operations and engineering teams.">
+    <meta property="og:title" content="Philstone | Systems Automation & Reliability">
+    <meta property="og:description"
+        content="We build automation that survives failure. Stop relying on fragile scripts and start engineering your operations.">
+    <meta property="og:image" content="https://philstone.io/og-image.jpg"> <!-- Placeholder -->
+    <meta property="og:url" content="https://philstone.io">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Philstone | Systems Automation">
+    <meta name="twitter:description" content="Engineering-grade automation for scaling businesses.">
+
+    <!-- Favicon (Placeholder) -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -42,6 +60,8 @@
                     <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
                     <li><a href="outcomes.html" class="nav-link">Outcomes</a></li>
                     <li><a href="work.html" class="nav-link">Work</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="insights.html" class="nav-link">Insights</a></li>
                     <li class="mobile-cta-item"><a href="contact.html" class="btn-primary mobile-nav-cta">Book
                             Consultation</a></li>
                 </ul>
@@ -159,6 +179,56 @@
         </div>
     </section>
 
+    <!-- NEW: Automation Audit Teaser -->
+    <section id="audit-teaser" class="section audit-teaser">
+        <div class="container">
+            <div class="audit-card">
+                <div class="audit-header">
+                    <h3>Is This a Good Candidate for Automation?</h3>
+                    <p>Answer 3 quick questions to see if your process is ready.</p>
+                </div>
+                <div class="audit-form">
+                    <div class="audit-group">
+                        <label for="audit-type">1. What do you want to automate?</label>
+                        <select id="audit-type" class="form-select">
+                            <option value="" disabled selected>Select an option...</option>
+                            <option value="ops">Operations / Admin Task</option>
+                            <option value="reporting">Data Reporting / Dashboards</option>
+                            <option value="integration">Connecting Two Apps</option>
+                            <option value="monitoring">System Monitoring</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="audit-group">
+                        <label for="audit-freq">2. How often does this run?</label>
+                        <select id="audit-freq" class="form-select">
+                            <option value="" disabled selected>Select frequency...</option>
+                            <option value="once">Once a year</option>
+                            <option value="daily">Daily / Weekly</option>
+                            <option value="continuous">Continuously / Real-time</option>
+                        </select>
+                    </div>
+                    <div class="audit-group">
+                        <label for="audit-impact">3. What happens if it fails?</label>
+                        <select id="audit-impact" class="form-select">
+                            <option value="" disabled selected>Select impact...</option>
+                            <option value="none">Nothing / Nobody notices</option>
+                            <option value="minor">Minor inconvenience</option>
+                            <option value="major">Business impact / Revenue loss</option>
+                        </select>
+                    </div>
+                    <button id="audit-btn" class="btn-primary">Check Viability</button>
+                </div>
+                <div id="audit-result" class="audit-result hidden">
+                    <h4 id="result-title"></h4>
+                    <p id="result-desc"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Removed: Moved to how-it-works.html -->
+
     <!-- 4. How It Works (Timeline) -->
     <section id="process" class="section process">
         <div class="container">
@@ -220,6 +290,43 @@
         </div>
     </section>
 
+    <!-- NEW: Failure-First Thinking Section -->
+    <section id="reliability" class="section reliability">
+        <div class="container">
+            <h2 class="section-title">What Happens When Things Break?</h2>
+            <p class="section-subtitle">We build for failure so your business doesn't have to.</p>
+            <div class="failure-grid">
+                <div class="failure-card">
+                    <div class="failure-icon">🔌</div>
+                    <h4>API Goes Down</h4>
+                    <p class="failure-solution"><strong>Response:</strong> Exponential backoff & retry.</p>
+                    <p class="failure-outcome">Usage resumes automatically when service returns.</p>
+                </div>
+                <div class="failure-card">
+                    <div class="failure-icon">📦</div>
+                    <h4>Bad Data</h4>
+                    <p class="failure-solution"><strong>Response:</strong> Validation fails fast.</p>
+                    <p class="failure-outcome">Bad records quarantined. Good data flows.</p>
+                </div>
+                <div class="failure-card">
+                    <div class="failure-icon">⏱️</div>
+                    <h4>Timeout</h4>
+                    <p class="failure-solution"><strong>Response:</strong> Async processing.</p>
+                    <p class="failure-outcome">User gets "Processing" status, not a 504 Gateway Error.</p>
+                </div>
+                <div class="failure-card">
+                    <div class="failure-icon">🛑</div>
+                    <h4>Hard Crash</h4>
+                    <p class="failure-solution"><strong>Response:</strong> Container auto-restart (K8s/Docker).</p>
+                    <p class="failure-outcome">System heals itself in seconds.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="contact.html" class="btn-primary">Build reliable automation</a>
+            </div>
+        </div>
+    </section>
+
     <!-- 6. Portfolio Carousel (Replaces Case Study) -->
     <section id="work" class="section portfolio">
         <div class="container">
@@ -237,6 +344,15 @@
                     <div class="portfolio-card">
                         <div class="card-badge">Logistics</div>
                         <h3>Global Supply Chain Automation</h3>
+                        <div class="card-hover-details">
+                            <div class="hover-stats">
+                                <span>Tools: Python, AWS</span>
+                                <span>Complexity: High</span>
+                            </div>
+                            <div class="hover-metric">
+                                <span class="old">4 hrs</span> ➝ <span class="new">5 mins</span>
+                            </div>
+                        </div>
                         <div class="card-details">
                             <p><strong>Challenge:</strong> Fragmented data across 5 legacy systems caused 4hr reporting
                                 delays.</p>
@@ -250,6 +366,15 @@
                     <div class="portfolio-card">
                         <div class="card-badge">FinTech</div>
                         <h3>Automated Compliance Checks</h3>
+                        <div class="card-hover-details">
+                            <div class="hover-stats">
+                                <span>Tools: API, Logic</span>
+                                <span>Complexity: Med</span>
+                            </div>
+                            <div class="hover-metric">
+                                <span class="old">Manual</span> ➝ <span class="new">Instant</span>
+                            </div>
+                        </div>
                         <div class="card-details">
                             <p><strong>Challenge:</strong> Slow manual KYC checks bottlenecking user onboarding.</p>
                             <p><strong>Solution:</strong> Automated verification system with custom logic API.</p>
@@ -262,6 +387,15 @@
                     <div class="portfolio-card">
                         <div class="card-badge">E-Commerce</div>
                         <h3>Inventory Sync & Forecasting</h3>
+                        <div class="card-hover-details">
+                            <div class="hover-stats">
+                                <span>Tools: Webhooks</span>
+                                <span>Complexity: Med</span>
+                            </div>
+                            <div class="hover-metric">
+                                <span class="old">Overselling</span> ➝ <span class="new">Zero</span>
+                            </div>
+                        </div>
                         <div class="card-details">
                             <p><strong>Challenge:</strong> Overselling due to sync lag between Shopify & Warehouse.</p>
                             <p><strong>Solution:</strong> Real-time webhook-based inventory sync engine.</p>
@@ -274,6 +408,15 @@
                     <div class="portfolio-card">
                         <div class="card-badge">Healthcare</div>
                         <h3>Patient Intake Processing</h3>
+                        <div class="card-hover-details">
+                            <div class="hover-stats">
+                                <span>Tools: OCR, NLP</span>
+                                <span>Complexity: High</span>
+                            </div>
+                            <div class="hover-metric">
+                                <span class="old">20 hrs/wk</span> ➝ <span class="new">Automated</span>
+                            </div>
+                        </div>
                         <div class="card-details">
                             <p><strong>Challenge:</strong> Manual data entry from PDF forms to EMR.</p>
                             <p><strong>Solution:</strong> OCR + NLP pipeline to parse and validate data.</p>
@@ -285,6 +428,15 @@
                     <div class="portfolio-card">
                         <div class="card-badge">SaaS</div>
                         <h3>Customer Support Triage</h3>
+                        <div class="card-hover-details">
+                            <div class="hover-stats">
+                                <span>Tools: LLM Agents</span>
+                                <span>Complexity: High</span>
+                            </div>
+                            <div class="hover-metric">
+                                <span class="old">Ticket Vol</span> ➝ <span class="new">-40%</span>
+                            </div>
+                        </div>
                         <div class="card-details">
                             <p><strong>Challenge:</strong> L1 support overwhelmed by repetitive queries.</p>
                             <p><strong>Solution:</strong> AI agent to classify and draft responses.</p>
@@ -292,6 +444,36 @@
                         </div>
                         <div class="card-quote">"Support morale is up, and customers are happier."</div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="contact.html" class="btn-outline">See how this would work for your system</a>
+        </div>
+    </section>
+
+    <!-- NEW: Fit Check Section -->
+    <section id="fit-check" class="section fit-check">
+        <div class="container">
+            <h2 class="section-title">Is Philstone Right for You?</h2>
+            <div class="fit-grid">
+                <div class="fit-col not-for">
+                    <h3>Not for...</h3>
+                    <ul>
+                        <li><span class="cross">✕</span> Quick, fragile hacks</li>
+                        <li><span class="cross">✕</span> No-code chains without monitoring</li>
+                        <li><span class="cross">✕</span> One-off scripts with no ownership</li>
+                        <li><span class="cross">✕</span> "Set and forget" black boxes</li>
+                    </ul>
+                </div>
+                <div class="fit-col built-for">
+                    <h3>Built for...</h3>
+                    <ul>
+                        <li><span class="check">✓</span> Operations & Engineering teams</li>
+                        <li><span class="check">✓</span> Reliability-focused workflows</li>
+                        <li><span class="check">✓</span> Long-term scalable systems</li>
+                        <li><span class="check">✓</span> Automation that survives failure</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -319,7 +501,7 @@
         <div class="container">
             <h2>Build systems that work even when you’re not watching.</h2>
             <div class="cta-wrapper">
-                <a href="contact.html" class="btn-primary large">Start Your Automation Journey</a>
+                <a href="contact.html" class="btn-primary large">Book a Consultation</a>
             </div>
         </div>
     </section>
@@ -338,15 +520,18 @@
             <div class="footer-nav">
                 <div class="footer-col">
                     <h4>Company</h4>
+                    <a href="about.html">About</a>
                     <a href="how-it-works.html">Process</a>
                     <a href="outcomes.html">Outcomes</a>
                     <a href="work.html">Work</a>
                     <a href="contact.html">Contact</a>
                 </div>
                 <div class="footer-col">
-                    <h4>Legal</h4>
-                    <a href="tos.html">Terms of Service</a>
-                    <a href="privacy.html">Privacy Policy</a>
+                    <h4>Resources</h4>
+                    <a href="insights.html">Insights</a>
+                    <a href="changelog.html">Changelog</a>
+                    <a href="tos.html">Terms</a>
+                    <a href="privacy.html">Privacy</a>
                 </div>
                 <div class="footer-col">
                     <h4>Services</h4>

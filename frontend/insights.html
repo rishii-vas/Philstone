@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insights | Philstone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .filter-row {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-chip {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-light);
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+
+        .filter-chip.active,
+        .filter-chip:hover {
+            background: var(--accent-hover-bg);
+            color: var(--accent-primary);
+            border-color: var(--accent-primary);
+        }
+
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .article-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 2rem;
+            transition: all var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .article-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-primary);
+        }
+
+        .article-tag {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--accent-primary);
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.05em;
+        }
+
+        .article-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+        }
+
+        .article-excerpt {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .article-date {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar" id="navbar">
+        <div class="container navbar-container">
+            <a href="index.html" class="logo">Philstone</a>
+            <div class="nav-right">
+                <a href="contact.html" class="nav-cta btn-primary">Book a Consultation</a>
+                <button class="hamburger-menu" id="hamburger-menu" aria-label="Toggle menu" aria-expanded="false">
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                </button>
+            </div>
+            <nav class="nav-dropdown" id="nav-dropdown">
+                <ul class="nav-list">
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+                    <li><a href="outcomes.html" class="nav-link">Outcomes</a></li>
+                    <li><a href="work.html" class="nav-link">Work</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="insights.html" class="nav-link">Insights</a></li>
+                    <li class="mobile-cta-item"><a href="contact.html" class="btn-primary mobile-nav-cta">Book
+                            Consultation</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="subpage-header">
+            <h1 class="page-title">Insights</h1>
+            <p class="hero-subheading">Thoughts on systems, automation, and the new era of operations.</p>
+        </div>
+
+        <div class="filter-row">
+            <button class="filter-chip active" data-filter="all">All</button>
+            <button class="filter-chip" data-filter="automation">Automation</button>
+            <button class="filter-chip" data-filter="systems">Systems</button>
+            <button class="filter-chip" data-filter="reliability">Reliability</button>
+            <button class="filter-chip" data-filter="ai">AI</button>
+        </div>
+
+        <section class="section" style="padding-top: 0;">
+            <div class="article-grid" id="insights-grid">
+                <!-- Article 1 -->
+                <a href="#" class="article-card" data-category="automation">
+                    <span class="article-tag">Automation</span>
+                    <h3 class="article-title">Why "No-Code" eventually hits a ceiling</h3>
+                    <p class="article-excerpt">The hidden technical debt of complex Zapier chains and when it's time to
+                        write actual Python.</p>
+                    <span class="article-date">Oct 12, 2025</span>
+                </a>
+
+                <!-- Article 2 -->
+                <a href="#" class="article-card" data-category="reliability">
+                    <span class="article-tag">Reliability</span>
+                    <h3 class="article-title">The Art of Idempotency in API Design</h3>
+                    <p class="article-excerpt">Ensuring that retrying a failed payment request doesn't charge the
+                        customer twice.</p>
+                    <span class="article-date">Sep 28, 2025</span>
+                </a>
+
+                <!-- Article 3 -->
+                <a href="#" class="article-card" data-category="systems">
+                    <span class="article-tag">Systems</span>
+                    <h3 class="article-title">Centralizing Data: The Single Source of Truth</h3>
+                    <p class="article-excerpt">Stop pulling reports from 5 different SaaS tools. Here's how to build a
+                        unified data warehouse.</p>
+                    <span class="article-date">Sep 10, 2025</span>
+                </a>
+
+                <!-- Article 4 -->
+                <a href="#" class="article-card" data-category="ai">
+                    <span class="article-tag">AI</span>
+                    <h3 class="article-title">Pragmatic AI: Beyond the Hype</h3>
+                    <p class="article-excerpt">Real world use cases for LLMs in operations that actually save time and
+                        money right now.</p>
+                    <span class="article-date">Aug 22, 2025</span>
+                </a>
+
+                <!-- Article 5 -->
+                <a href="#" class="article-card" data-category="reliability">
+                    <span class="article-tag">Reliability</span>
+                    <h3 class="article-title">If you can't measure it, it's broken</h3>
+                    <p class="article-excerpt">Setting up alerting for business-critical automated workflows using
+                        Prometheus and Grafana.</p>
+                    <span class="article-date">Aug 05, 2025</span>
+                </a>
+
+                <!-- Article 6 -->
+                <a href="#" class="article-card" data-category="automation">
+                    <span class="article-tag">Automation</span>
+                    <h3 class="article-title">The "Human-in-the-Loop" Pattern</h3>
+                    <p class="article-excerpt">Designing workflows that handle 90% of cases automatically but gracefully
+                        escalate the 10%.</p>
+                    <span class="article-date">Jul 15, 2025</span>
+                </a>
+            </div>
+            <div style="text-align: center; margin-top: 4rem;">
+                <!-- Placeholder load more -->
+                <button class="btn-outline">Load More</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">Philstone</a>
+                <p class="footer-tagline">Engineering the future of work.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="GitHub">GitHub</a>
+                    <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="about.html">About</a>
+                    <a href="how-it-works.html">Process</a>
+                    <a href="outcomes.html">Outcomes</a>
+                    <a href="work.html">Work</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="insights.html">Insights</a>
+                    <a href="changelog.html">Changelog</a>
+                    <a href="tos.html">Terms</a>
+                    <a href="privacy.html">Privacy</a>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Philstone. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

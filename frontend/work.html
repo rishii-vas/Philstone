@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Work | Philstone</title>
+    <title>Work | Philstone</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -19,7 +19,7 @@
             <a href="index.html" class="logo">Philstone</a>
             <div class="nav-right">
                 <a href="contact.html" class="nav-cta btn-primary">Book a Consultation</a>
-                <button class="hamburger-menu" id="hamburger-menu">
+                <button class="hamburger-menu" id="hamburger-menu" aria-label="Toggle menu" aria-expanded="false">
                     <span class="bar"></span><span class="bar"></span><span class="bar"></span>
                 </button>
             </div>
@@ -29,6 +29,8 @@
                     <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
                     <li><a href="outcomes.html" class="nav-link">Outcomes</a></li>
                     <li><a href="work.html" class="nav-link">Work</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="insights.html" class="nav-link">Insights</a></li>
                     <li class="mobile-cta-item"><a href="contact.html" class="btn-primary mobile-nav-cta">Book
                             Consultation</a></li>
                 </ul>
@@ -38,24 +40,22 @@
 
     <main class="container">
         <div class="subpage-header">
-            <h1 class="hero-headline">Selected Work</h1>
+            <h1 class="page-title">Selected Work</h1>
         </div>
         <div class="subpage-content">
             <h3>Logistics: Global Supply Chain Automation</h3>
-            <p><strong>Challenge:</strong> A logistics leader had data siloed in 5 different legacy systems. Reporting
-                took 4+ hours per day.<br>
-                <strong>Solution:</strong> We built a unified data pipeline using Python and AWS Lambda.<br>
-                <strong>Result:</strong> Reporting time cut to 5 minutes. Real-time visibility achieved.
-            </p>
-            <br>
-            <hr style="border-color: var(--border-light); margin: 2rem 0;">
-            <br>
+            <p><strong>Challenge:</strong> A logistics firm struggled with fragmented data across 5 legacy systems,
+                causing 4-hour reporting delays.</p>
+            <p><strong>Solution:</strong> We built a unified data pipeline using Python & AWS Lambda to aggregate and
+                normalize data in real-time.</p>
+            <p><strong>Outcome:</strong> Reporting time was cut to 5 minutes, providing true real-time visibility into
+                global shipments.</p>
+            <div style="height: 2rem;"></div>
             <h3>FinTech: Automated Compliance Checks</h3>
-            <p><strong>Challenge:</strong> Manual KYC checks were slowing down user onboarding.<br>
-                <strong>Solution:</strong> Implemented an automated verification system using third-party APIs and
-                custom logic.<br>
-                <strong>Result:</strong> 90% of checks are now instant, with only edge cases requiring human review.
-            </p>
+            <p><strong>Challenge:</strong> Slow manual KYC checks were creating a bottleneck for user onboarding.</p>
+            <p><strong>Solution:</strong> We implemented an automated verification system with a custom logic API to
+                handle complex edge cases.</p>
+            <p><strong>Outcome:</strong> 90% of checks are now instant, resulting in 3x faster customer onboarding.</p>
             <br>
             <div style="text-align: center; margin-top: 3rem;">
                 <a href="index.html" class="btn-outline">← Back to Home</a>
@@ -68,10 +68,30 @@
             <div class="footer-brand">
                 <a href="index.html" class="logo">Philstone</a>
                 <p class="footer-tagline">Engineering the future of work.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="GitHub">GitHub</a>
+                    <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Philstone. All rights reserved.</p>
+            <div class="footer-nav">
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="about.html">About</a>
+                    <a href="how-it-works.html">Process</a>
+                    <a href="outcomes.html">Outcomes</a>
+                    <a href="work.html">Work</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="insights.html">Insights</a>
+                    <a href="tos.html">Terms</a>
+                    <a href="privacy.html">Privacy</a>
+                </div>
             </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Philstone. All rights reserved.</p>
         </div>
     </footer>
     <script src="script.js"></script>

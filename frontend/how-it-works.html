@@ -19,7 +19,7 @@
             <a href="index.html" class="logo">Philstone</a>
             <div class="nav-right">
                 <a href="contact.html" class="nav-cta btn-primary">Book a Consultation</a>
-                <button class="hamburger-menu" id="hamburger-menu">
+                <button class="hamburger-menu" id="hamburger-menu" aria-label="Toggle menu" aria-expanded="false">
                     <span class="bar"></span><span class="bar"></span><span class="bar"></span>
                 </button>
             </div>
@@ -29,6 +29,8 @@
                     <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
                     <li><a href="outcomes.html" class="nav-link">Outcomes</a></li>
                     <li><a href="work.html" class="nav-link">Work</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="insights.html" class="nav-link">Insights</a></li>
                     <li class="mobile-cta-item"><a href="contact.html" class="btn-primary mobile-nav-cta">Book
                             Consultation</a></li>
                 </ul>
@@ -38,7 +40,7 @@
 
     <main class="container">
         <div class="subpage-header">
-            <h1 class="hero-headline">How It Works</h1>
+            <h1 class="page-title">How It Works</h1>
         </div>
         <div class="subpage-content">
             <p>Our process is designed to be transparent, efficient, and results-driven.</p>
@@ -59,6 +61,85 @@
             <p>We don't just hand over the keys and leave. We implement monitoring to ensure everything stays running,
                 and we're there to help you scale as your volume grows.</p>
             <br>
+
+            <!-- Interactive Automation Section -->
+            <section id="automation-interactive" class="section automation-interactive"
+                style="padding: 2rem 0; margin: 4rem 0; border-top: 1px solid var(--border-light);">
+                <div class="container" style="padding: 0;"> <!-- Inner container padding removed as parent has it -->
+                    <h2 class="section-title">See It In Action</h2>
+                    <div class="interactive-layout">
+                        <!-- Col 1: Steps -->
+                        <div class="step-list">
+                            <button class="step-btn active" data-step="0">01. Trigger</button>
+                            <button class="step-btn" data-step="1">02. Validate</button>
+                            <button class="step-btn" data-step="2">03. Transform</button>
+                            <button class="step-btn" data-step="3">04. Integrate</button>
+                            <button class="step-btn" data-step="4">05. Monitor</button>
+                        </div>
+
+                        <!-- Col 2: Visual Pipeline -->
+                        <div class="visual-pipeline">
+                            <div class="pipeline-line"></div>
+                            <div class="pipeline-node active" data-step="0">
+                                <div class="node-icon">⚡</div>
+                            </div>
+                            <div class="pipeline-node" data-step="1">
+                                <div class="node-icon">✓</div>
+                            </div>
+                            <div class="pipeline-node" data-step="2">
+                                <div class="node-icon">⇄</div>
+                            </div>
+                            <div class="pipeline-node" data-step="3">
+                                <div class="node-icon">🔗</div>
+                            </div>
+                            <div class="pipeline-node" data-step="4">
+                                <div class="node-icon">👀</div>
+                            </div>
+                        </div>
+
+                        <!-- Col 3: Details Panel -->
+                        <div class="detail-panel">
+                            <div class="detail-content active" data-step="0">
+                                <h3>Trigger Event</h3>
+                                <p><strong>Action:</strong> A webhook, schedule, or user action initiates the workflow.
+                                </p>
+                                <p><strong>Risk:</strong> Duplicate webhooks or missed schedule.</p>
+                                <p class="handling"><strong>Handling:</strong> Idempotency keys & dead-letter queues.
+                                </p>
+                            </div>
+                            <div class="detail-content" data-step="1">
+                                <h3>Validation</h3>
+                                <p><strong>Action:</strong> Input data is checked against strict schemas (Pydantic).</p>
+                                <p><strong>Risk:</strong> Malformed JSON or missing fields.</p>
+                                <p class="handling"><strong>Handling:</strong> Immediate rejection with 400 error &
+                                    alert.</p>
+                            </div>
+                            <div class="detail-content" data-step="2">
+                                <h3>Transformation</h3>
+                                <p><strong>Action:</strong> Data is normalized and mapped to target format.</p>
+                                <p><strong>Risk:</strong> Mapping logic error or encoding issues.</p>
+                                <p class="handling"><strong>Handling:</strong> Unit-tested logic & error logging.</p>
+                            </div>
+                            <div class="detail-content" data-step="3">
+                                <h3>Integration</h3>
+                                <p><strong>Action:</strong> API calls to external services (Salesforce, Stripe, etc.).
+                                </p>
+                                <p><strong>Risk:</strong> API timeout, rate limits, or downtime.</p>
+                                <p class="handling"><strong>Handling:</strong> Exponential backoff retries & circuit
+                                    breakers.
+                                </p>
+                            </div>
+                            <div class="detail-content" data-step="4">
+                                <h3>Monitoring</h3>
+                                <p><strong>Action:</strong> Success metrics logged, stakeholders notified.</p>
+                                <p><strong>Risk:</strong> Silent failures if logging service is down.</p>
+                                <p class="handling"><strong>Handling:</strong> Local fallback logging & health checks.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <div style="text-align: center; margin-top: 3rem;">
                 <a href="index.html" class="btn-outline">← Back to Home</a>
             </div>
@@ -70,10 +151,30 @@
             <div class="footer-brand">
                 <a href="index.html" class="logo">Philstone</a>
                 <p class="footer-tagline">Engineering the future of work.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="GitHub">GitHub</a>
+                    <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Philstone. All rights reserved.</p>
+            <div class="footer-nav">
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="about.html">About</a>
+                    <a href="how-it-works.html">Process</a>
+                    <a href="outcomes.html">Outcomes</a>
+                    <a href="work.html">Work</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="insights.html">Insights</a>
+                    <a href="tos.html">Terms</a>
+                    <a href="privacy.html">Privacy</a>
+                </div>
             </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Philstone. All rights reserved.</p>
         </div>
     </footer>
     <script src="script.js"></script>

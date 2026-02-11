@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Philstone</title>
+    <title>Contact | Philstone</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -18,9 +18,8 @@
         <div class="container navbar-container">
             <a href="index.html" class="logo">Philstone</a>
             <div class="nav-right">
-                <a href="contact.html" class="nav-cta btn-primary" style="visibility: hidden;">Book a Consultation</a>
-                <!-- Hidden on this page but kept for spacing -->
-                <button class="hamburger-menu" id="hamburger-menu">
+                <a href="contact.html" class="nav-cta btn-primary">Book a Consultation</a>
+                <button class="hamburger-menu" id="hamburger-menu" aria-label="Toggle menu" aria-expanded="false">
                     <span class="bar"></span><span class="bar"></span><span class="bar"></span>
                 </button>
             </div>
@@ -30,6 +29,10 @@
                     <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
                     <li><a href="outcomes.html" class="nav-link">Outcomes</a></li>
                     <li><a href="work.html" class="nav-link">Work</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="insights.html" class="nav-link">Insights</a></li>
+                    <li class="mobile-cta-item"><a href="contact.html" class="btn-primary mobile-nav-cta">Book
+                            Consultation</a></li>
                 </ul>
             </nav>
         </div>
@@ -37,57 +40,72 @@
 
     <main class="container">
         <div class="subpage-header">
-            <h1 class="hero-headline">Book a Consultation</h1>
-            <p class="hero-subheading" style="margin-top: 1rem;">Ready to automate your operations? Let's discuss your
-                system architecture.</p>
+            <h1 class="page-title">Let's build something scalable.</h1>
+            <p class="hero-subheading">Tell us about your automation challenges. We'll help you engineer a solution.</p>
         </div>
 
-        <div class="section">
+        <div class="subpage-content">
             <form id="contact-form" class="contact-form">
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" id="name" class="form-input" required placeholder="Jane Doe">
+                    <input type="text" id="name" name="name" class="form-input" required placeholder="Jane Doe">
                 </div>
 
                 <div class="form-group">
                     <label for="email">Work Email</label>
-                    <input type="email" id="email" class="form-input" required placeholder="jane@company.com">
+                    <input type="email" id="email" name="email" class="form-input" required
+                        placeholder="jane@company.com">
                 </div>
 
                 <div class="form-group">
-                    <label for="interest">What are you looking to automate?</label>
-                    <select id="interest" class="form-select">
-                        <option value="Ops">Operations & Workflows</option>
-                        <option value="Data">Data Pipelines & Reporting</option>
-                        <option value="Integration">API Integrations</option>
-                        <option value="AI">AI & Agents</option>
-                        <option value="Other">Other / Not Sure</option>
+                    <label for="interest">I'm interested in...</label>
+                    <select id="interest" name="interest" class="form-select">
+                        <option value="consultation">General Consultation</option>
+                        <option value="automation">Systems Automation</option>
+                        <option value="backend">Backend Engineering</option>
+                        <option value="ai">AI Integration</option>
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label for="message">Message</label>
-                    <textarea id="message" class="form-textarea"
-                        placeholder="Tell us briefly about your current manual bottlenecks..."></textarea>
+                    <textarea id="message" name="message" class="form-textarea" required
+                        placeholder="Tell us a bit about your project..."></textarea>
                 </div>
 
-                <button type="submit" class="btn-primary" style="width: 100%;">Send Request</button>
+                <button type="submit" class="btn-primary" style="width: 100%;">Send Message</button>
             </form>
 
             <div style="text-align: center; margin-top: 4rem; color: var(--text-secondary);">
-                <p>Or email us directly at:</p>
-                <a href="mailto:hello@philstone.com"
-                    style="color: var(--accent-primary); font-size: 1.1rem;">hello@philstone.com</a>
+                <p>Or email us directly at <a href="mailto:hello@philstone.com"
+                        style="color: var(--accent-primary); text-decoration: underline;">hello@philstone.com</a></p>
             </div>
         </div>
     </main>
 
     <footer class="footer">
         <div class="container footer-content">
-            <div class="footer-brand"><a href="index.html" class="logo">Philstone</a></div>
+            <div class="footer-brand">
+                <a href="index.html" class="logo">Philstone</a>
+                <p class="footer-tagline">Engineering the future of work.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="GitHub">GitHub</a>
+                    <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                </div>
+            </div>
             <div class="footer-nav">
                 <div class="footer-col">
-                    <h4>Legal</h4>
+                    <h4>Company</h4>
+                    <a href="about.html">About</a>
+                    <a href="how-it-works.html">Process</a>
+                    <a href="outcomes.html">Outcomes</a>
+                    <a href="work.html">Work</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="insights.html">Insights</a>
+                    <a href="changelog.html">Changelog</a>
                     <a href="tos.html">Terms</a>
                     <a href="privacy.html">Privacy</a>
                 </div>

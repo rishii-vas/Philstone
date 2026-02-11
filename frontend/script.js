@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 2. Navigation Dropdown Logic
+    // 2. Navigation Dropdown Logic (Redesigned)
     const hamburgerBtn = document.getElementById('hamburger-menu');
     const navDropdown = document.getElementById('nav-dropdown');
     let isNavOpen = false;
@@ -23,33 +23,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (isNavOpen) {
             navDropdown.classList.add('active');
-            hamburgerBtn.innerHTML = `
-                <span class="bar" style="transform: rotate(45deg) translate(5px, 5px)"></span>
-                <span class="bar" style="opacity: 0"></span>
-                <span class="bar" style="transform: rotate(-45deg) translate(5px, -5px)"></span>
-            `;
-            document.body.style.overflow = 'hidden';
+            hamburgerBtn.classList.add('is-active'); // Use class for animation
+            // No scroll lock for compact dropdown
         } else {
             navDropdown.classList.remove('active');
-            hamburgerBtn.innerHTML = `
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            `;
-            document.body.style.overflow = '';
+            hamburgerBtn.classList.remove('is-active');
         }
     }
 
     if (hamburgerBtn) {
-        hamburgerBtn.addEventListener('click', toggleNav);
+        hamburgerBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent immediate closing from document click
+            toggleNav();
+        });
     }
 
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+        if (isNavOpen && navDropdown && !navDropdown.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+            toggleNav();
+        }
+    });
+
+    // Close on link click
     document.querySelectorAll('.nav-link, .mobile-nav-cta').forEach(link => {
         link.addEventListener('click', () => {
             if (isNavOpen) toggleNav();
         });
     });
 
+    // Close on Escape key
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && isNavOpen) {
             toggleNav();
@@ -273,5 +276,78 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('resize', resize);
         resize();
         animate();
+
+    }
+
+    // 8. Interactive Automation Section Logic
+    const stepBtns = document.querySelectorAll('.step-btn');
+    const pipelineNodes = document.querySelectorAll('.pipeline-node');
+    const detailContents = document.querySelectorAll('.detail-content');
+    const automationSection = document.getElementById('automation-interactive');
+
+    if (automationSection && stepBtns.length > 0) {
+        stepBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const stepIndex = btn.getAttribute('data-step');
+
+                // Update Buttons
+                stepBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // Update Nodes
+                pipelineNodes.forEach(node => {
+                    node.classList.remove('active');
+                    if (node.getAttribute('data-step') === stepIndex) {
+                        node.classList.add('active');
+                    }
+                });
+
+                // Update Details
+                detailContents.forEach(content => {
+                    content.classList.remove('active');
+                    if (content.getAttribute('data-step') === stepIndex) {
+                        content.classList.add('active');
+                    }
+                });
+            });
+        });
+
+        // Optional: Auto-cycle if not interacted with (stops on hover)
+        let currentStep = 0;
+        let autoCycleInterval;
+        let isPaused = false;
+
+        function nextStep() {
+            if (isPaused) return;
+            currentStep = (currentStep + 1) % stepBtns.length;
+            // Simulate click
+            const btn = document.querySelector(`.step-btn[data-step="${currentStep}"]`);
+            if (btn) btn.click();
+        }
+
+        // Start auto-cycle when visible
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                // cycle every 4 seconds
+                autoCycleInterval = setInterval(nextStep, 4000);
+            } else {
+                clearInterval(autoCycleInterval);
+            }
+        }, { threshold: 0.5 });
+        observer.observe(automationSection);
+
+        // Pause on hover
+        automationSection.addEventListener('mouseenter', () => isPaused = true);
+        automationSection.addEventListener('mouseleave', () => isPaused = false);
+
+        // Pause interacting manually
+        stepBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                isPaused = true;
+                // Keep paused for a bit or permanently? Let's just pause on interaction logic handled by hover, 
+                // but explicit click should probably stop auto-cycling logic to avoid annoyance.
+                // Relying on hover pause is usually safer for UX.
+            });
+        });
     }
 });
